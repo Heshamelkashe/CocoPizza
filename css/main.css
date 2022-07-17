@@ -1,0 +1,731 @@
+/*
+
+[Table of contents]
+0.  Bootstrap Button 
+1.  Navbar Section
+2.  Slider Section
+3.  Offer Section
+4.  Dish Section
+5.  Features Section
+6.  Book Section
+7.  form book
+8.  Footer Section
+9. Responsive
+
+*/
+
+
+/*=============================================================================*/
+/* 0. reset & initiate styles */
+/*=============================================================================*/
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;  padding: 0;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: white;
+}
+html {
+    scroll-behavior: smooth;
+}
+:root {
+    --main_Color:#ef6c51;
+    --first_Color:white;
+    --last_Color : black;
+}
+.main_container {
+    margin: 0 auto;
+    padding: 0 ;
+}
+
+/*=============================================================================*/
+/* 1. Navbar Section*/
+/*=============================================================================*/
+.navbar {
+    width: 100%;
+    height: 75px;
+    background-color: var(--first_Color);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+.navbar_logo {
+    width: 150px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navbar_logo a img {
+    width: 80px;
+}
+.navbarList {
+    width: 450px;
+    height: 100%;
+}
+.navbarList ul{
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+}
+.navbarList ul a {
+    text-decoration: none;
+    color:var(--last_Color);
+    font-size: 16px;
+    transition: .3s ;
+}
+.navbarList ul a:hover {
+    color:var(--main_Color);
+}
+.navbar_buttons {
+    width: 160px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar .open_book {
+    background: none;
+    border: 0;
+}
+.navbar .open_book a{
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    background-color: var(--last_Color);
+    color: var(--first_Color);
+    padding: 12px 20px;
+    border-radius: 7px;
+    transition: .5s;
+}
+.navbar .open_book a:hover {
+    color: var(--last_Color);
+    background-color: var(--main_Color);
+
+}
+.open_ListMedia {
+    display: none;
+}
+
+/*=============================================================================*/
+/* 2..  Slider Section
+/*=============================================================================*/
+.carousel  {
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+}
+.carousel-item {
+    width: 100%;
+    height: 100%;
+}
+.carousel-inner {
+    width: 100%;
+    height: 100%;
+}
+.carousel-caption {
+    position: absolute;
+    top: 20%;
+    left: 15%;
+}
+.carousel-caption h1 {
+    font-size: 60px;
+    color: var(--last_Color);
+    width: 400px;
+}
+.carousel-caption p {
+    color: gray;
+    font-size: 15px;
+}
+.carousel-caption .slide1 {
+    width: fit-content;
+    height: fit-content;
+    background-color: var(--main_Color);
+    color: var(--last_Color);
+    font-size: 14px;
+    padding: 8px 20px;
+    border: 0;
+    border-radius: 5px;
+    transition: .3s;
+}
+.carousel-caption .slide1:hover {
+    background-color: var(--last_Color);
+    color: var(--first_Color);
+}
+
+
+/*=============================================================================*/
+/* 3. Offer Section */
+/*=============================================================================*/
+.offer_section {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background-color: var(--last_Color);
+}
+.offer_section .active_offer {
+    transform: translateX(0%);
+}
+.offer_image {
+    width: 100%;
+    height: 100%;
+    transform: translateX(100%);
+    transition: 1s linear;
+}
+.offer_section_items {
+    width: 358px;
+    position: absolute;
+    top: 18%;
+    left: 15%;
+    padding: 10px 0;
+    height: fit-content;
+    transform: translateX(-200%);
+    transition: 1.5s linear;
+} 
+.offer_section_items p {
+    font-size: 20px;
+    color: gray;
+}
+.offer_section_items h3 {
+    font-size: 40px;
+    margin: 10px 0;
+    color:var(--first_Color);
+}
+.offer_section_items .price {
+ font-size: 30px;
+ color: var(--main_Color);
+}
+.offer_section_items button {
+    width: fit-content;
+    height: fit-content;
+    padding: 11px 40px;
+    border: 0;
+    border-radius: 5px;
+    background: var(--main_Color);
+    color: var(--last_Color);
+
+}
+
+
+/*=============================================================================*/
+/* 4. Dish Section */
+/*=============================================================================*/
+.Popular_Dishes {
+    width: 100%;
+    height: fit-content;
+    padding: 4rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url(../images/dish.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.title_Dishes {
+    width: 100%;
+    height: fit-content;
+    padding: 1rem 0;
+    margin-bottom: 1rem ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.title_Dishes h2 {
+    color: var(--last_Color);
+}
+.title_Dishes p {
+    color: gray;
+}
+.Popular_Dishes .row {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+.Popular_Dishes .row .item {
+    width: 300px;
+    height: fit-content;
+    padding: 1rem;
+    margin: 10px ;
+    border-radius: 10px;
+    background-color:#fafafa;
+    box-shadow: 0 0 3px 0 #80808063;
+    overflow: hidden;
+}
+.Popular_Dishes .row .item img {
+    display: block;
+    margin: 0 auto;
+    width: 220px;
+    height: 220px;
+}
+.Popular_Dishes .row .item h5 {
+    font-size: 18px;
+    margin-top: 1.5rem;
+    color: var(--last_Color);
+}
+.Popular_Dishes .row .item p {
+    font-size: 13px;
+    color: gray;
+    margin: 0;
+}
+.Popular_Dishes .row .item span {
+    width: 100%;
+    display: inline-block;
+    font-size: 22px;
+    color: var(--main_Color);
+}
+.Popular_Dishes .row .item button {
+    width: 130px;
+    height: 35px;
+    border: 0;
+    margin-top: 10px;
+    background: black;
+    border-radius: 5px;
+}
+.Popular_Dishes .row .item button a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 8px 0;
+    text-decoration: none;
+    font-size: 14px;
+    color: var(--first_Color);
+    transition: .3s;
+}
+.Popular_Dishes .row .item button a:hover {
+    background-color: var(--main_Color);
+    color: var(--last_Color);
+}
+
+.Popular_Dishes  .item:nth-child(1) {
+    transform: translateX(-400px);
+    transition: 1s linear;
+}
+.Popular_Dishes  .item:nth-child(2) {
+    transition: 1.5s linear;
+    transform: translateY(500px);
+}
+.Popular_Dishes .item:nth-child(3) {
+    transition: 1s linear;
+    transform: translateX(400px);
+}
+
+/*=============================================================================*/
+/* 5. Features Section */
+/*=============================================================================*/
+.sone-Notes {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+.sone-Notes .container {
+    background-color: #fafafa;
+}
+.sone-Notes .container .row {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.sone-Notes .container .col {
+    width: 250px;
+    height: fit-content;
+    padding: 1rem ;
+    margin: 1rem;
+}
+.sone-Notes .fas {
+    font-size: 50px;
+    color: var(--main_Color);
+}
+.sone-Notes p {
+    font-size: 15px;
+    color: gray;
+}
+
+/*=============================================================================*/
+/* 6.  Book Section*/
+/*=============================================================================*/
+.book_Cook {
+    width: 100%;
+    height: 250px;
+    margin: 1.5rem 0;
+    background-color: var(--last_Color);
+    position: relative;
+}
+.book_Cook img {
+    width: 100%;
+    height: 100%;
+}
+.book_Cook .text {
+    width: fit-content;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    padding: 0 1rem;
+}
+.book_Cook .text h3 {
+    font-size: 40px;
+    color: var(--first_Color);
+}
+.book_Cook .text p {
+    color: gray;
+}
+
+/*=============================================================================*/
+/* 7. Book form */
+/*=============================================================================*/
+.title_book_form {
+    width: 100%;
+    height: fit-content;
+    padding: 1rem ;
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.title_book_form h2 {
+    color:var(--last_Color);
+    font-size: 40px;
+}
+.title_book_form p {
+    width: 47%;
+    text-align: center;
+    color: gray;
+}
+
+.book-form {
+    width: 100%;
+    height: fit-content;
+    padding: 1rem ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.book-from-left {
+    width: 500px;
+    height: fit-content;
+    padding: 1rem;
+}
+.book-from-right {
+    width: 500px;
+    height: 381px;
+    overflow: hidden;
+}
+
+
+/*=============================================================================*/
+/* 8. footer */
+/*=============================================================================*/
+footer {
+    width: 100%;
+    height: fit-content;
+    background-color: #040303e0;
+    padding-top: 4rem ;
+    padding-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer .main-Footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+}
+.first-footer {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+footer .item {
+    width: 320px;
+    height: fit-content;
+    padding: 1rem;
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: column;
+}
+footer .item h5 {
+    color: white;
+    font-size: 22px;
+    margin-bottom: 1rem;
+
+}
+footer .item p {
+    font-size: 14px;
+    color: gray;
+}
+
+footer .item:nth-child(1) img {
+    width: 70px;
+    height: 45px;
+    margin-bottom: 1rem;
+}
+footer .item:nth-child(1) .link-footer {
+    width: 100%;
+    height: fit-content;
+    padding: 10px 0;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+footer .item:nth-child(1) .link-footer a {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    font-size: 18px;
+    margin-right: 10px;
+    color: var(--first_Color);
+    border-radius: 50%;
+    transition: .3s;
+}
+footer .item:nth-child(1) .link-footer a:hover {
+    color: var(--main_Color);
+}
+footer .item:nth-child(3) a {
+    text-decoration: none;
+    color: gray;
+    font-size: 13px;
+    margin: 3px 0;
+    transition: .3s;
+}
+footer .item:nth-child(3) a i{
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    font-size: 14px;
+    text-align: center;
+    padding: 2px 0;
+    transition: .3s;
+}
+footer .item:nth-child(3) a:hover{
+    color: var(--first_Color);
+}
+footer .item:nth-child(3) a:hover i {
+ color: var(--main_Color);
+}
+/* last footer */
+.last-footer {
+    width: 100%;
+    height: 60px;
+    padding: 0  2.5rem;
+    border-top: 1px solid gray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.last-footer p {
+    width: fit-content;
+    height: fit-content;
+    margin: 0;
+    font-size: 15px;
+    color: gray;
+}
+.last-footer a {
+    text-decoration: none;
+    color: var(--first_Color);
+    font-size: 13px;
+    transition: .3s;
+}
+.last-footer a:hover {
+    color: var(--main_Color);
+}
+
+
+/*=============================================================================*/
+/* 9. Responsive */
+/*=============================================================================*/
+
+@media(min-width: 360px) and (max-width: 575px) {
+    .main_container {
+        width: 350px;
+        padding: 0;
+    }
+    .navbar {
+        justify-content: space-between;
+    }
+    .navbar_logo {
+        width: 90px;
+    }
+    .navbar_logo a img {
+        width: 50px;
+    }
+    .navbarList {
+        width: 100%;
+        position: fixed;
+        top: 75px;
+        left: 0;
+        height: 0;
+        overflow: hidden;
+        z-index: 1000;
+        background-color: var(--first_Color);
+        transition: .3s linear; 
+    }
+    .active_listNavbar {
+        height: 200px;
+    }
+    .navbarList ul{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        margin: 0;
+        justify-content: center;
+        align-items: start;
+        flex-direction: column;
+    }
+    .navbarList ul a { 
+        display: block;
+        text-decoration: none;
+        margin: 7px 0;
+        color: var(--last_Color);
+        font-size: 16px;
+        transition: .3s;
+    }
+    .navbar_buttons {
+        width: 80px;
+    }
+    .navbar .open_book {
+        display: none;
+    }
+    .open_ListMedia {
+        display: block;
+        width: 35px;
+        height: 35px;
+        background-color: black;
+        color: white;
+        font-size: 20px;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+    /* slider Image */
+    .carousel-caption {
+        top: 30%;
+    }
+    .carousel-caption h1 {
+        font-size: 30px;
+        width: 250px;
+    }
+    .carousel-caption p {
+        width: 150px;
+    }
+    .carousel-caption .slide1 {
+        padding: 5px 10px;
+        font-size: 11px;
+    }
+
+    /* offer section */
+    .offer_section_items {
+        top: 27%;
+    }
+    .offer_section_items p {
+        font-size: 14px;
+    }
+    .offer_section_items h3 {
+        font-size: 22px;
+        width: 200px;
+    }
+    .offer_section_items .price {
+        font-size: 20px;
+    }
+    .offer_section_items button{
+        font-size: 12px;
+        padding: 8px 20px;
+    }
+
+    /* book form */
+    .title_book_form p {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    /* footer */
+    .last-footer {
+        padding: 0 1rem;
+        justify-content: space-evenly;
+    }
+    .last-footer p {
+        font-size: 8px;
+    }
+    .last-footer a {
+        font-size: 10px;
+    }
+
+
+
+
+}
+
+
+@media(min-width: 576px) and (max-width:800px) {
+    .main_container {
+        width: 95%;
+        padding: 0;
+    }
+    .navbar_logo {
+        width: 90px;
+    }
+    .navbar_logo a img {
+        width: 50px;
+    }
+    .navbarList {
+        width: 300px;
+    }
+    .navbarList ul a {
+        font-size: 12px;
+    }
+    .navbar_buttons {
+        width: 100px;
+    }
+    .navbar .open_book a {
+        font-size: 12px;
+        padding: 9px;
+    }
+
+
+
+    
+}
+
+
+@media(min-width: 1200px) {
+    .main_container {
+        width: 1345px;
+    }
+    footer .main-Footer {
+        width: 80%;
+    }
+}

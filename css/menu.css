@@ -1,0 +1,646 @@
+
+*{
+    box-sizing: border-box;
+    margin: 0; padding: 0;
+}
+:root {
+    --main_Color:#ef6c51;
+    --first_Color:white;
+    --last_Color : black;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: white;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+/*=============================================================================*/
+/* header
+/*=============================================================================*/
+
+.navbar {
+    background-color: var(--last_Color);
+    padding: 0 1rem;
+    height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+.navbar .logo {
+    width: 100px;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navbar .logo  a img {
+    width: 70px;
+    height: 40px;
+}
+.navbar form {
+    width: 350px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navbar form input {
+    width: 85%;
+    height: 100%;
+    padding-left: 10px;
+    font-size: 14px;
+    background:var(--first_Color);
+    border: 0;
+    color: var(--last_Color);
+    outline: none;
+}
+.navbar form input:focus {
+    box-shadow: 0 0 2px 3px var(--main_Color);
+}
+.navbar form button {
+    width: 15%;
+    height: 100%;
+    border: 0;
+    background: var(--main_Color);
+    color: var(--last_Color);
+
+}
+.navbar .buttons_header {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navbar .btnOpen_Account {
+    width: fit-content;
+    height: 40px;
+    font-size: 14px;
+    padding: 10px 0.5rem;
+    color: white;
+    border: 0;
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+}
+.navbar .btnOpen_Account i {
+    font-size: 16px;
+    color: var(--main_Color);
+    margin-right: 5px;
+    transition: .5s;
+}
+.navbar .btnOpen_Account:hover {
+    color: var(--main_Color);
+}
+.navbar .btnOpen_Account:hover i {
+    color: var(--first_Color);
+}
+.openSearchForm {
+    display: none;
+}
+
+/*=============================================================================*/
+/*  Title - menu list
+/*=============================================================================*/
+.title {
+    width: 100%;
+    height: 120px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.title img {
+    width: 100%;
+    height: 100%;
+}
+.title h2 {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    height: 100%;
+    left: 0;
+    display: flex;
+    font-size: 40px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/*=============================================================================*/
+/* Products */
+/*=============================================================================*/
+.Products {
+    width: 100%;
+    height: 100%;
+    padding: 2rem 0;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    position: relative;
+}
+.Products .menu {
+    width: 75%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.Products .menu .product {
+    width: 250px;
+    height: fit-content;
+    padding: 1rem 10px;
+    border-radius: 5px;
+    margin: 10px ;
+    background-color: var(--first_Color);
+    display: flex;
+    align-items: stretch;
+    justify-content: start;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 0 0 4px 0 rgba(128, 128, 128, 0.494);
+}
+.Products .menu .product img {
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin: 0 auto;
+}
+.Products .menu .product h5 {
+    font-size: 18px;
+    margin-top: 1rem;
+    color: var(--last_Color);
+}
+.Products .menu .product p {
+    font-size: 13px;
+    color: gray;
+    margin: 0;
+}
+.Products .menu .product .price {
+    width: 100%;
+    height: fit-content;
+    margin: 5px 0;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.Products .menu .product .price p i {
+    font-size: 12px;
+    color: gold;
+}
+.Products .menu .product .price span {
+    font-size: 15px;
+    margin-left: 1rem;
+    color: var(--main_Color);
+}
+.Products .menu .product .order {
+    width: 120px;
+    height: 35px;
+    border: 1px solid var(--last_Color);
+    background: none;
+    margin: 5px 0;
+    font-size: 15px;
+    transition: .5s;
+}
+.Products .menu .product .order:hover {
+    background-color: var(--last_Color);
+    color: var(--first_Color);
+}
+
+/*  cart */
+
+.Products .cart {
+    width: 25%;
+    height: fit-content;
+    padding: 2rem 1rem;
+    position: sticky;
+    top: 77px;
+    overflow-y: auto;
+}
+.Products .cart .showItemCart {
+    width: 100%;
+    height: fit-content;
+    padding: 1rem;
+    background-color: var(--first_Color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 0 4px 0 rgba(128, 128, 128, 0.737);
+}
+.Products .cart .showItemCart img {
+    width: 150px;
+    height: 150px;
+    padding: 10%;
+    border-radius: 50%;
+    background: var(--main_Color);
+    position: relative;
+}
+.Products .cart .showItemCart h5 {
+    font-size: 16px;
+    color: var(--last_Color);
+    margin-top: 1rem;
+}
+.Products .cart .showItemCart p {
+    font-size: 12px;
+    color: gray;
+    margin: 0;
+    text-align: center;
+}
+
+/*=============================================================================*/
+/* create Account */
+/*=============================================================================*/
+
+.createAccount {
+    width: 100%;
+    height: 100%;
+    background-color: #00000047;
+    position: fixed;
+    top: 0;
+    z-index: 1002;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.createAccount .close_Account {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid gray;
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.createAccount .list_Account {
+    width: 340px;
+    height: fit-content;
+    padding: 1rem 10px;
+    overflow: hidden;
+    border-radius: 10px;
+    position: relative;
+    background-color: var(--first_Color);
+}
+.createAccount .list_Account .image_logo {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 auto;
+    box-shadow: 0 0 4px 0 rgba(128, 128, 128, 0.541);
+    background-color: var(--first_Color);
+}
+.createAccount  .buttons_mainAccount 
+{
+    width: 100%;
+    height: fit-content;
+    padding: 1rem ;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.createAccount .buttons_mainAccount button
+{
+    width: fit-content;
+    height: fit-content;
+    padding: 5px 1rem;
+    background: none;
+    border: 0;
+    color: gray;
+    font-size: 18px; 
+    font-weight: 500;
+}
+.createAccount .buttons_mainAccount .active_btn {
+    color: var(--last_Color);
+    border-bottom: 3px solid brown;
+}
+
+.createAccount .list_item
+{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: start;
+    align-items: center;
+    transition: .3s linear;
+}
+
+/* Sign In Account */
+.sighIn 
+{
+    width: 320px;
+    height: 300px;
+    margin-right: 2rem;
+    padding: 2rem 1rem;
+}
+.sighIn label {
+    font-size: 11px;
+    color: gray;
+}
+.sighIn #password ,
+.sighIn #Email {
+    width: 100%;
+    height: 35px;
+    font-size: 13px;
+    background-color: rgba(128, 128, 128, 0.109);
+    border: 0;
+    outline: none;
+    padding-left: 8px;
+    margin-bottom: 8px;
+}
+.sighIn #password:focus ,
+.sighIn #Email:focus {
+    border: 1px solid var(--main_Color);
+    box-shadow: 0 0 4px 0 var(--main_Color);
+}
+.sighIn .check {
+    width: 100%;
+    height: 30px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+.sighIn .check input {
+    margin-right:8px ;
+}
+.sighIn .check .forgot_pas {
+    background: none;
+    border: 0;
+    font-size: 11px;
+    color: var(--last_Color);
+    margin-left: 5rem;
+    transition: .3s;
+}
+.sighIn .check .forgot_pas:hover {
+    color: var(--main_Color);
+}
+.sighIn .submit {
+    width: 200px;
+    height: 40px;
+    border: 0;
+    border-radius: 20px;
+    color: var(--first_Color);
+    background-color: var(--last_Color);
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+    margin: 1rem auto;
+    transition: .4s;
+}
+.sighIn .submit:hover {
+    background-color: var(--main_Color);
+
+}
+
+/* create Account */
+.create {
+    width: 320px;
+    height: 300px;
+    margin-right: 2rem;
+    padding: 1rem ;
+}
+.create form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+.create input {
+    width: 100%;
+    height: 35px;
+    font-size: 13px;
+    background-color: rgba(128, 128, 128, 0.109);
+    border: 0;
+    outline: none;
+    border-radius: 5px;
+    padding-left: 8px;
+}
+.create input:focus{
+    border: 1px solid var(--main_Color);
+    box-shadow: 0 0 4px 0 var(--main_Color);
+}
+.create button {
+    width: 200px;
+    height: 40px;
+    border: 0;
+    border-radius: 20px;
+    color: var(--first_Color);
+    background-color: var(--last_Color);
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    transition: .4s;
+}
+.create button:hover {
+    background-color: var(--main_Color);   
+}
+
+/*=============================================================================*/
+/* footer */
+/*=============================================================================*/
+footer {
+    width: 100%;
+    height: fit-content;
+    background-color: #040303e0;
+    padding-top: 4rem ;
+    padding-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer .main-Footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+}
+.first-footer {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+footer .item {
+    width: 320px;
+    height: fit-content;
+    padding: 1rem;
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: column;
+}
+footer .item h5 {
+    color: white;
+    font-size: 22px;
+    margin-bottom: 1rem;
+
+}
+footer .item p {
+    font-size: 14px;
+    color: gray;
+}
+
+footer .item:nth-child(1) img {
+    width: 70px;
+    height: 45px;
+    margin-bottom: 1rem;
+}
+footer .item:nth-child(1) .link-footer {
+    width: 100%;
+    height: fit-content;
+    padding: 10px 0;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+footer .item:nth-child(1) .link-footer a {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    font-size: 18px;
+    margin-right: 10px;
+    color: var(--first_Color);
+    border-radius: 50%;
+    transition: .3s;
+}
+footer .item:nth-child(1) .link-footer a:hover {
+    color: var(--main_Color);
+}
+footer .item:nth-child(3) a {
+    text-decoration: none;
+    color: gray;
+    font-size: 13px;
+    margin: 3px 0;
+    transition: .3s;
+}
+footer .item:nth-child(3) a i{
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    font-size: 14px;
+    text-align: center;
+    padding: 2px 0;
+    transition: .3s;
+}
+footer .item:nth-child(3) a:hover{
+    color: var(--first_Color);
+}
+footer .item:nth-child(3) a:hover i {
+ color: var(--main_Color);
+}
+/* last footer */
+.last-footer {
+    width: 100%;
+    height: 60px;
+    padding: 0  2.5rem;
+    border-top: 1px solid gray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.last-footer p {
+    width: fit-content;
+    height: fit-content;
+    margin: 0;
+    font-size: 15px;
+    color: gray;
+}
+.last-footer a {
+    text-decoration: none;
+    color: var(--first_Color);
+    font-size: 13px;
+    transition: .3s;
+}
+.last-footer a:hover {
+    color: var(--main_Color);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*=============================================================================*/
+/*  Media */
+/*=============================================================================*/
+@media(min-width:350px) and  (max-width:500px) {
+    /* header */
+    .openSearchForm {
+        display: block;
+        width: 30px;
+        height: 30px;
+        background: none;
+        border: 0;
+        font-size: 15px;
+        color: var(--main_Color);
+    }
+    .openSearchForm:hover {
+        color: var(--first_Color);
+    }
+    .navbar form {
+        width: 100%;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        display: none;
+    }
+    .navbar .btnOpen_Account {
+        width: 30px;
+        height: 30px;
+        margin-left: 1rem;
+    }
+    .navbar .btnOpen_Account span {
+        display: none;
+    }
+    .Products .menu {
+        width: 100%;
+    }
+    .Products .cart {
+        display: none;
+    }
+
+
+}
+
+
+@media(min-width:501px)  and  (max-width:1000px) {
+  
+    .Products .menu {
+        width: 60%;
+    }
+    .Products .cart {
+        width: 40%;
+    }
+
+}
